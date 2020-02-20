@@ -1,0 +1,71 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api for ninehire",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nest start",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "test": "jest",
+    "test:infra:persistence": "jest src/module/*/infra/persistence/repository/*.repository.spec.ts",
+    "schema:create:dev": "mikro-orm schema:create --run",
+    "schema:drop:dev": "mikro-orm schema:drop --run",
+    "schema:debug": "mikro-orm debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^6.11.7",
+    "@nestjs/core": "^6.11.7",
+    "@nestjs/platform-express": "^6.11.7",
+    "@sendgrid/mail": "^6.5.2",
+    "class-validator": "^0.11.0",
+    "class-validator-message-formatter": "0.0.3",
+    "dotenv-safe": "^8.2.0",
+    "mikro-orm": "^3.2.1",
+    "mysql2": "^2.1.0",
+    "nestjs-mikro-orm": "^1.0.2",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^6.5.4",
+    "unique-names-generator": "^4.2.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.11.7",
+    "@types/dotenv-safe": "^8.1.0",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "@types/uuid": "^3.4.7",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testRegex": ".spec.ts$",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "@config/(.*)": "config/$1",
+      "@shared/(.*)": "shared/$1",
+      "@identityAccess/(.*)": "module/identityAccess/$1"
+    }
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/config/MikroOrm.config.ts",
+      "./dist/config/MikroOrm.config.js"
+    ]
+  }
+}

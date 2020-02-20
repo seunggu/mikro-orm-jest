@@ -1,0 +1,4 @@
+export enum ExceptionType {
+  INVALID_DOMAIN = 'INVALID_DOMAIN',
+  UNPROCESSABLE = 'UNPROCESSABLE',
+}

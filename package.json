@@ -19,7 +19,7 @@
     "@nestjs/core": "^6.11.7",
     "@nestjs/platform-express": "^6.11.7",
     "@sendgrid/mail": "^6.5.2",
-    "class-validator": "^0.11.0",
+    "class-validator": "^0.14.0",
     "class-validator-message-formatter": "0.0.3",
     "dotenv-safe": "^8.2.0",
     "mikro-orm": "^3.2.1",
